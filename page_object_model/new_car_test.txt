@@ -1,0 +1,25 @@
+Aukcja nr 1
+https://allegro.pl/ogloszenie/renault-clio-1-2-collection-darmowa-dostawa-12781883827
+<selenium.webdriver.remote.webelement.WebElement (session="76496f9837eefaacb28ead68cb961968", element="7a77825c-cc22-46ad-9fac-ad9fba236ff3")>
+
+
+Aukcja nr 2
+https://allegro.pl/ogloszenie/renault-clio-1-2-16v-zarejestrowany-klima-gwar-12867697606
+<selenium.webdriver.remote.webelement.WebElement (session="76496f9837eefaacb28ead68cb961968", element="7a77825c-cc22-46ad-9fac-ad9fba236ff3")>
+
+
+Aukcja nr 3
+https://allegro.pl/ogloszenie/climatronic-navi-tablet-12482092868
+<selenium.webdriver.remote.webelement.WebElement (session="76496f9837eefaacb28ead68cb961968", element="7a77825c-cc22-46ad-9fac-ad9fba236ff3")>
+
+
+Aukcja nr 4
+https://allegro.pl/ogloszenie/renault-clio-gt-line1-2-benzyna-tce-120-psauto-12803325971
+<selenium.webdriver.remote.webelement.WebElement (session="76496f9837eefaacb28ead68cb961968", element="7a77825c-cc22-46ad-9fac-ad9fba236ff3")>
+
+
+Aukcja nr 5
+https://allegro.pl/ogloszenie/renault-clio-1-2-16v-salon-polska-serwis-aso-12862819901
+<selenium.webdriver.remote.webelement.WebElement (session="76496f9837eefaacb28ead68cb961968", element="7a77825c-cc22-46ad-9fac-ad9fba236ff3")>
+
+
