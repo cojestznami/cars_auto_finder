@@ -70,6 +70,7 @@ def show_phone_number():
     driver.find_element(By.TAG_NAME, "//div/div[2]/div[5]/div[2][contains(text()='numer')]").click()
 
 
+driver.maximize_window()
 driver.get("https://www.allegro.pl")  # open car website
 
 decline_gdpr()
@@ -90,45 +91,24 @@ choosing_version()
 
 list1 = driver.find_elements(By.XPATH, "//article//div/a")
 list_url = [link.get_attribute("href") for link in list1]
-print(len(list_url))
-auction_name = driver.find_element(By.XPATH, "//div[1]/div/div/div/div/div/div[1]/div/div[1]/h4")
-car_price = driver.find_elements(By.XPATH, "/html/body/div[2]/div[5]/div/div/div[6]/div/div/div/div/div/div[2]/div/div[1]/div/div/div[2]/div/div/div/div/div/div/div/div[2]/div[1]/div/div/span[1]")
-copy_phone_number = driver.find_elements(By.TAG_NAME, "a")
-
-# //div[2]/div[5]/div[2]/div/div/a
-# //div[2]/div[5]/div[2]/div
-
 
 i = 1
 f = open("new_car_test.txt", 'w')
-for url in list_url[0:5]:
+for url in list_url:
     driver.get(url)
-    f.write("Aukcja nr " + str(i) + "\n")
+    f.write("Auction nr " + str(i) + "\n")
     f.write(url + "\n")
-    # numers = (numer.get_attribute.driver.find_elements(By.TAG_NAME, "a")for numer in copy_phone_number)
-    # for numer in numers:
-    # print(numer.get_attribute('href'))
-    # f.write(str(number))
-    f.write(str(auction_name) + "\n")
-    # print(car_price)
-    for price in car_price:
-        f.write(price.get_attribute('textContent') + "\n")
-    # show_phone_number()
-    # f.write(str(copy_phone_number) + "\n")
-    # print(copy_phone_number)
+    auction_name = driver.find_element(By.XPATH, "//div[1]/div/div/div/div/div/div[1]/div/div[1]/h4")
+    f.write(auction_name.get_attribute('textContent') + "\n")
+    price_tag = driver.find_element(By.XPATH, "//div[2]/div/div/div/div/div/div/div/div[2]/div[1]/div/div/span")
+    f.write("Price for this car is: " + price_tag.text + "00 PLN." + "\n")
+    number_show = driver.find_element(By.XPATH, "//div[2]/div/div/div/div/div/div/div/div[2]/div[5]/div[2]/button")
+    number_show.click()
+    number_copy = driver.find_element(By.XPATH, "//div/div[2]/div/div/div/div/div/div/div/div[2]/div[5]/div[2]/div/div/a")
+    f.write(number_copy.get_attribute('textContent') + "\n")
+    ssname = ("Auction name " + str(i))
+    driver.get_screenshot_as_file(f'/Users/bartoszwrobel/PycharmProjects/cars_auto_finder/scrensh/{str(ssname)}.png')
     f.write("\n\n")
     i = i + 1
     driver.switch_to.new_window()
 f.close()
-
-# #photo main
-# /html/body/div[2]/div[5]/div/div/div[6]/div/div/div/div/div/div[1]/div/div[1]/div/div/div/div/div/div[2]/div/div/div/div/div/div/div[1]/div[1]/div/div/div[1]/img
-# #link (url)
-# #price
-# /html/body/div[2]/div[5]/div/div/div[6]/div/div/div/div/div/div[2]/div/div[1]/div/div/div[2]/div/div/div/div/div/div/div/div[2]/div[1]/div/div/span[1]
-# #phone (click)
-# /html/body/div[2]/div[5]/div/div/div[6]/div/div/div/div/div/div[2]/div/div[1]/div/div/div[2]/div/div/div/div/div/div/div/div[2]/div[5]/div[2]/button
-# #phone(copy)
-# /html/body/div[2]/div[5]/div/div/div[6]/div/div/div/div/div/div[2]/div/div[1]/div/div/div[2]/div/div/div/div/div/div/div/div[2]/div[5]/div[2]/div/div/a (href contains )
-# #name_auction
-# /html/body/div[2]/div[5]/div/div/div[6]/div/div/div/div/div/div[1]/div/div[1]/div/div/div/div/div/div[1]/div/div[1]/h4
