@@ -66,10 +66,6 @@ def choosing_version():
     driver.find_element(By.XPATH, "//div[2]/ul/li[3]/div/a").click()
 
 
-def show_phone_number():
-    driver.find_element(By.TAG_NAME, "//div/div[2]/div[5]/div[2][contains(text()='numer')]").click()
-
-
 driver.maximize_window()
 driver.get("https://www.allegro.pl")  # open car website
 
